@@ -17,14 +17,16 @@
         <div class="col-md-3 border1">
           <p>Menu</p>
           <ul class="nobullets">
-            <li>Menu Item 1</li>
-            <li>Menu Item 2</li>
-            <li>Menu Item 3</li>
-            <li>Menu Item 4</li>
+            <li *ngFor="let option of options; let i=index ">
+             <a routerLink = "{{ option.url }}"> {{ option.name }} </a>
+           </li>
           </ul>
         </div>
         <div class="col-md-9 border1">
-          <p><br/>{{content.body}}<br/><br/>{{content.body}}</p>
+          <!-- <p><br/>{{content.body}}<br/><br/>{{content.body}}</p> -->
+          <router-outlet>
+              <p>{{ option.body }} </p>
+          </router-outlet>
         </div>
       </div>
 
